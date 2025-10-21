@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adler32 Calculator - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional Adler32 calculator by Nandha Kumar M. Fast checksum algorithm for data integrity verification.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-calculator me-2"></i>Adler32 Calculator
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Calculate Adler32 checksum of any text input. Adler32 is a checksum algorithm invented by Mark Adler, designed to be fast while still being effective for detecting errors.
+            </p>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">Input Text</label>
+                        <textarea id="inputText" class="form-control" rows="4" placeholder="Enter text to calculate Adler32..."></textarea>
+                    </div>
+                    
+                    <div class="d-flex gap-2 mb-3">
+                        <button id="calculateAdler32" class="btn btn-primary">
+                            <i class="fas fa-calculator me-2"></i>Calculate Adler32
+                        </button>
+                        <button id="clearAll" class="btn btn-secondary">
+                            <i class="fas fa-eraser me-2"></i>Clear All
+                        </button>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Adler32 Checksum</label>
+                        <input type="text" id="outputAdler32" class="form-control" readonly>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button id="copyAdler32" class="btn btn-outline-primary">
+                            <i class="fas fa-copy me-2"></i>Copy Adler32
+                        </button>
+                        <button id="compareAdler32" class="btn btn-outline-info">
+                            <i class="fas fa-compress-arrows-alt me-2"></i>Compare Adler32
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-info-circle me-2"></i>About Adler32</h5>
+                </div>
+                <div class="card-body">
+                    <p>Adler32 is a checksum algorithm invented by Mark Adler in 1995. It is a modification of the Fletcher checksum and is designed to be fast while still being effective for detecting errors.</p>
+                    <h6>Characteristics:</h6>
+                    <ul>
+                        <li>Produces a 32-bit (4-byte) checksum</li>
+                        <li>Faster than CRC32</li>
+                        <li>Less robust than CRC32</li>
+                        <li>Used in zlib compression library</li>
+                        <li>Part of PNG image format</li>
+                    </ul>
+                    <h6>Common Use Cases:</h6>
+                    <ul>
+                        <li>Data integrity verification</li>
+                        <li>Compression algorithms (zlib)</li>
+                        <li>PNG image checksums</li>
+                        <li>Network protocol verification</li>
+                        <li>Fast error detection in data transmission</li>
+                    </ul>
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <strong>Note:</strong> Adler32 is not suitable for cryptographic security purposes as it's designed for error detection, not security.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-mobile-alt me-2"></i>Android Security</h6>
+                        <p class="small text-muted">In Android pentesting, Adler32 checksums are used in APK files for integrity verification. Nandha Kumar M's research shows that understanding Adler32 helps in analyzing APK integrity.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-network-wired me-2"></i>Network Security</h6>
+                        <p class="small text-muted">Adler32 is used in compression algorithms and can be important for analyzing network traffic with compressed data.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../header-footer.js"></script>
+    <script src="adler32-calculator.js"></script>
+</body>
+</html>

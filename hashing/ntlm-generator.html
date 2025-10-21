@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTLM Generator - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional NTLM hash generator by Nandha Kumar M. Windows authentication hash for security professionals.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-key me-2"></i>NTLM Generator
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Generate NTLM hash of any password input. NTLM (NT LAN Manager) is a suite of Microsoft security protocols that authenticates users.
+            </p>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" id="passwordInput" class="form-control" placeholder="Enter password to hash...">
+                    </div>
+                    
+                    <div class="d-flex gap-2 mb-3">
+                        <button id="generateNTLM" class="btn btn-primary">
+                            <i class="fas fa-calculator me-2"></i>Generate NTLM Hash
+                        </button>
+                        <button id="clearAll" class="btn btn-secondary">
+                            <i class="fas fa-eraser me-2"></i>Clear All
+                        </button>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">NTLM Hash</label>
+                        <input type="text" id="outputNTLM" class="form-control" readonly>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button id="copyNTLM" class="btn btn-outline-primary">
+                            <i class="fas fa-copy me-2"></i>Copy NTLM
+                        </button>
+                        <button id="compareNTLM" class="btn btn-outline-info">
+                            <i class="fas fa-compress-arrows-alt me-2"></i>Compare NTLM
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-info-circle me-2"></i>About NTLM</h5>
+                </div>
+                <div class="card-body">
+                    <p>NTLM (NT LAN Manager) is a suite of Microsoft security protocols that authenticates users. NTLM is the successor to the authentication protocol in Microsoft LAN Manager (LANMAN), an older Microsoft product, and attempts to provide backwards compatibility with LANMAN.</p>
+                    <h6>Characteristics:</h6>
+                    <ul>
+                        <li>Used in Windows authentication</li>
+                        <li>Based on MD4 hash function</li>
+                        <li>Considered weak by modern standards</li>
+                        <li>Being replaced by Kerberos</li>
+                        <li>Still used in legacy systems</li>
+                    </ul>
+                    <h6>Common Use Cases:</h6>
+                    <ul>
+                        <li>Windows domain authentication</li>
+                        <li>Legacy system compatibility</li>
+                        <li>Penetration testing</li>
+                        <li>Security research</li>
+                        <li>Hash comparison in security tools</li>
+                    </ul>
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        <strong>Security Warning:</strong> NTLM is considered insecure by modern standards. Use Kerberos or other stronger authentication methods when possible.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>Penetration Testing</h6>
+                        <p class="small text-muted">In penetration testing, understanding NTLM hashes is crucial for Windows domain security assessments. Nandha Kumar M's research shows that NTLM remains a common attack vector in enterprise environments.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-network-wired me-2"></i>Windows Security</h6>
+                        <p class="small text-muted">NTLM hashes are important for understanding Windows authentication mechanisms and identifying potential security weaknesses in domain environments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../header-footer.js"></script>
+    <script src="ntlm-generator.js"></script>
+</body>
+</html>

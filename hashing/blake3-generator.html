@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLAKE3 Generator - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional BLAKE3 hash generator by Nandha Kumar M. High-performance cryptographic hashing for security professionals.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-fingerprint me-2"></i>BLAKE3 Generator
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Generate BLAKE3 hash of any text input. BLAKE3 is a modern cryptographic hash function that is much faster than MD5, SHA-1, SHA-2, or SHA-3, while being designed to be highly secure.
+            </p>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">Input Text</label>
+                        <textarea id="inputText" class="form-control" rows="4" placeholder="Enter text to hash..."></textarea>
+                    </div>
+                    
+                    <div class="d-flex gap-2 mb-3">
+                        <button id="generateHash" class="btn btn-primary">
+                            <i class="fas fa-calculator me-2"></i>Generate BLAKE3 Hash
+                        </button>
+                        <button id="clearAll" class="btn btn-secondary">
+                            <i class="fas fa-eraser me-2"></i>Clear All
+                        </button>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">BLAKE3 Hash</label>
+                        <textarea id="outputHash" class="form-control" rows="4" readonly></textarea>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button id="copyHash" class="btn btn-outline-primary">
+                            <i class="fas fa-copy me-2"></i>Copy Hash
+                        </button>
+                        <button id="compareHash" class="btn btn-outline-info">
+                            <i class="fas fa-compress-arrows-alt me-2"></i>Compare Hashes
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-info-circle me-2"></i>About BLAKE3</h5>
+                </div>
+                <div class="card-body">
+                    <p>BLAKE3 is a cryptographic hash function based on improvements to the BLAKE2 function. It is designed to be much faster than MD5, SHA-1, SHA-2, or SHA-3, while being designed to be highly secure.</p>
+                    <h6>Key Features:</h6>
+                    <ul>
+                        <li>High performance (faster than MD5, SHA-1, SHA-2, SHA-3)</li>
+                        <li>Designed to be secure against all known attacks</li>
+                        <li>Supports variable output lengths</li>
+                        <li>Parallelizable for high throughput</li>
+                        <li>Incremental processing</li>
+                    </ul>
+                    <h6>Common Use Cases:</h6>
+                    <ul>
+                        <li>High-performance applications</li>
+                        <li>Real-time data verification</li>
+                        <li>Blockchain applications</li>
+                        <li>Large file integrity checks</li>
+                        <li>Security-critical applications</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>GraphQL Security</h6>
+                        <p class="small text-muted">In GraphQL introspection testing, BLAKE3 can be used for high-performance schema integrity verification, especially when dealing with large schemas or high-throughput applications.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-network-wired me-2"></i>Performance Security</h6>
+                        <p class="small text-muted">Nandha Kumar M's research shows that BLAKE3 is increasingly important for applications requiring both high performance and strong security guarantees.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../header-footer.js"></script>
+    <script src="blake3-generator.js"></script>
+</body>
+</html>
