@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traceroute Simulator - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional traceroute simulator by Nandha Kumar M. Network path analysis for penetration testing and security research.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-route me-2"></i>Traceroute Simulator
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Simulate traceroute to visualize the path packets take across the internet. Essential for network analysis and penetration testing.
+            </p>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-8">
+                            <label class="form-label">Target Host</label>
+                            <input type="text" id="targetHost" class="form-control" placeholder="e.g., example.com or 192.168.1.1">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Max Hops</label>
+                            <input type="number" id="maxHops" class="form-control" value="30" min="1" max="64">
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex gap-2 mb-3">
+                        <button id="startTraceroute" class="btn btn-primary">
+                            <i class="fas fa-play me-2"></i>Start Traceroute
+                        </button>
+                        <button id="stopTraceroute" class="btn btn-danger">
+                            <i class="fas fa-stop me-2"></i>Stop Traceroute
+                        </button>
+                        <button id="clearAll" class="btn btn-secondary">
+                            <i class="fas fa-eraser me-2"></i>Clear All
+                        </button>
+                    </div>
+
+                    <div class="progress mb-3">
+                        <div id="traceProgress" class="progress-bar" role="progressbar" style="width: 0%"></div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Hop</th>
+                                    <th>IP Address</th>
+                                    <th>Hostname</th>
+                                    <th>RTT (ms)</th>
+                                    <th>Location</th>
+                                </tr>
+                            </thead>
+                            <tbody id="traceResults">
+                                <!-- Results will be populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="terminal-output mt-3">
+                        <div class="terminal-prompt" id="traceOutput"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-info-circle me-2"></i>About Traceroute</h5>
+                </div>
+                <div class="card-body">
+                    <p>Traceroute is a network diagnostic tool used to track the path that an IP packet takes from source to destination. It works by sending packets with incrementally increasing TTL (Time To Live) values.</p>
+                    <h6>Common Use Cases:</h6>
+                    <ul>
+                        <li>Network troubleshooting</li>
+                        <li>Identifying network bottlenecks</li>
+                        <li>Penetration testing reconnaissance</li>
+                        <li>Security research and analysis</li>
+                        <li>Mapping network topology</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>Penetration Testing</h6>
+                        <p class="small text-muted">In penetration testing, traceroute can reveal network infrastructure details and potential attack vectors. Nandha Kumar M's research shows that understanding network topology is crucial for effective security assessments.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-search me-2"></i>Deep Domain Discovery</h6>
+                        <p class="small text-muted">Traceroute can help identify deep domains and network ranges that might not be discoverable through traditional dorking techniques.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../header-footer.js"></script>
+    <script src="traceroute-simulator.js"></script>
+</body>
+</html>

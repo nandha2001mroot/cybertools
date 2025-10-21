@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WHOIS Viewer - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional WHOIS viewer by Nandha Kumar M. Domain registration information lookup for security research.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-search me-2"></i>WHOIS Viewer
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                View domain registration information including owner details, registration dates, and name servers. Essential for security research and penetration testing.
+            </p>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">Domain Name</label>
+                        <input type="text" id="domainInput" class="form-control" placeholder="e.g., example.com">
+                    </div>
+                    
+                    <div class="d-flex gap-2 mb-3">
+                        <button id="performWHOIS" class="btn btn-primary">
+                            <i class="fas fa-search me-2"></i>Perform WHOIS Lookup
+                        </button>
+                        <button id="clearAll" class="btn btn-secondary">
+                            <i class="fas fa-eraser me-2"></i>Clear All
+                        </button>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Domain Information</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <strong>Domain:</strong> <span id="domainName">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Status:</strong> <span id="domainStatus">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Registrar:</strong> <span id="registrar">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Created:</strong> <span id="createdDate">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Expires:</strong> <span id="expiresDate">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Contact Information</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <strong>Registrant:</strong> <span id="registrantName">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Email:</strong> <span id="registrantEmail">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Organization:</strong> <span id="registrantOrg">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Phone:</strong> <span id="registrantPhone">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Address:</strong> <span id="registrantAddress">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <h6>Full WHOIS Data</h6>
+                        <pre id="whoisOutput" class="text-start bg-dark text-light p-3 rounded"></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-info-circle me-2"></i>About WHOIS</h5>
+                </div>
+                <div class="card-body">
+                    <p>WHOIS is a query and response protocol that is widely used for querying databases that store the registered users or assignees of an Internet resource, such as a domain name, an IP address block, or an autonomous system.</p>
+                    <h6>Common Use Cases:</h6>
+                    <ul>
+                        <li>Domain ownership verification</li>
+                        <li>Security research and analysis</li>
+                        <li>Penetration testing reconnaissance</li>
+                        <li>Threat intelligence gathering</li>
+                        <li>Legal and compliance investigations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>Penetration Testing</h6>
+                        <p class="small text-muted">In penetration testing, WHOIS data can reveal information about target organizations, including contact details and infrastructure. Nandha Kumar M's research shows that WHOIS analysis is crucial for comprehensive security assessments.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-search me-2"></i>Threat Intelligence</h6>
+                        <p class="small text-muted">WHOIS data is valuable for threat intelligence, helping identify patterns in domain registration and potential security threats.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../header-footer.js"></script>
+    <script src="whois-viewer.js"></script>
+</body>
+</html>

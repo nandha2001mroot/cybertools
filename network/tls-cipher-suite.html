@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TLS Cipher Suite Analyzer - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional TLS cipher suite analyzer by Nandha Kumar M. Security analysis of TLS configurations for penetration testing.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-shield-alt me-2"></i>TLS Cipher Suite Analyzer
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Analyze TLS cipher suites supported by a server. Essential for identifying weak encryption and security misconfigurations.
+            </p>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">Target Host</label>
+                        <input type="text" id="targetHost" class="form-control" placeholder="e.g., example.com">
+                    </div>
+                    
+                    <div class="d-flex gap-2 mb-3">
+                        <button id="analyzeTLS" class="btn btn-primary">
+                            <i class="fas fa-search me-2"></i>Analyze TLS
+                        </button>
+                        <button id="clearAll" class="btn btn-secondary">
+                            <i class="fas fa-eraser me-2"></i>Clear All
+                        </button>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>TLS Configuration</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <strong>Protocol Version:</strong> <span id="protocolVersion">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Supported Ciphers:</strong> <span id="cipherCount">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Security Level:</strong> <span id="securityLevel">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Weak Ciphers:</strong> <span id="weakCiphers">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Security Analysis</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <strong>Security Score:</strong> <span id="securityScore">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Risk Level:</strong> <span id="riskLevel">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Vulnerabilities:</strong> <span id="vulnerabilities">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Recommendations:</strong> <span id="recommendations">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <h6>Supported Cipher Suites</h6>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Cipher Suite</th>
+                                        <th>Protocol</th>
+                                        <th>Key Exchange</th>
+                                        <th>Encryption</th>
+                                        <th>MAC</th>
+                                        <th>Security</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="cipherResults">
+                                    <!-- Results will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-info-circle me-2"></i>About TLS Cipher Suites</h5>
+                </div>
+                <div class="card-body">
+                    <p>TLS cipher suites define how security is implemented in a TLS connection. Each cipher suite specifies the key exchange algorithm, bulk encryption algorithm, and message authentication code (MAC) algorithm.</p>
+                    <h6>Common Components:</h6>
+                    <ul>
+                        <li><strong>Key Exchange:</strong> RSA, DHE, ECDHE</li>
+                        <li><strong>Encryption:</strong> AES, 3DES, RC4</li>
+                        <li><strong>MAC:</strong> SHA, SHA256, SHA384</li>
+                        <li><strong>Protocol:</strong> TLS 1.0, 1.1, 1.2, 1.3</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>Penetration Testing</h6>
+                        <p class="small text-muted">In penetration testing, TLS cipher suite analysis can reveal weak encryption methods that might be exploited. Nandha Kumar M's research shows that analyzing TLS configurations is crucial for identifying security vulnerabilities.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-network-wired me-2"></i>Web Security</h6>
+                        <p class="small text-muted">Understanding TLS cipher suites is essential for securing web applications and identifying potential attack vectors during security assessments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../header-footer.js"></script>
+    <script src="tls-cipher-suite.js"></script>
+</body>
+</html>
