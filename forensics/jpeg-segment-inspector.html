@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JPEG Segment Inspector - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional JPEG segment inspector by Nandha Kumar M. Analyze JPEG segments for digital forensics and metadata extraction.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-image me-2"></i>JPEG Segment Inspector
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Inspect JPEG file segments to extract metadata and detect anomalies. Essential for digital forensics and image analysis.
+            </p>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">JPEG Image Upload</label>
+                        <input type="file" id="jpegFileUpload" class="form-control" accept=".jpg,.jpeg">
+                    </div>
+                    
+                    <div class="d-flex gap-2 mb-3">
+                        <button id="inspectSegments" class="btn btn-primary">
+                            <i class="fas fa-search me-2"></i>Inspect JPEG Segments
+                        </button>
+                        <button id="clearAll" class="btn btn-secondary">
+                            <i class="fas fa-eraser me-2"></i>Clear All
+                        </button>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Image Information</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <strong>File Name:</strong> <span id="fileName">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>File Size:</strong> <span id="fileSize">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Dimensions:</strong> <span id="dimensions">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Compression:</strong> <span id="compression">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Quality:</strong> <span id="quality">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Segment Analysis</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <strong>Total Segments:</strong> <span id="totalSegments">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>APP Segments:</strong> <span id="appSegments">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>DQT Segments:</strong> <span id="dqtSegments">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>SOS Segments:</strong> <span id="sosSegments">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Metadata:</strong> <span id="metadata">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <h6>JPEG Segments</h6>
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Marker</th>
+                                        <th>Type</th>
+                                        <th>Length</th>
+                                        <th>Offset</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="segmentTable">
+                                    <!-- Results will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <h6>EXIF Metadata</h6>
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Tag</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="exifTable">
+                                    <!-- Results will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-info-circle me-2"></i>About JPEG Segments</h5>
+                </div>
+                <div class="card-body">
+                    <p>JPEG files are organized into segments marked by markers. Each segment serves a specific purpose in defining the image structure and metadata.</p>
+                    <h6>Common JPEG Markers:</h6>
+                    <ul>
+                        <li><strong>SOI:</strong> Start of image</li>
+                        <li><strong>APP0-APP15:</strong> Application segments for metadata</li>
+                        <li><strong>DQT:</strong> Define quantization tables</li>
+                        <li><strong>SOF0:</strong> Start of frame (baseline)</li>
+                        <li><strong>DHT:</strong> Define Huffman tables</li>
+                        <li><strong>SOS:</strong> Start of scan</li>
+                        <li><strong>EOI:</strong> End of image</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-search me-2"></i>Digital Forensics</h6>
+                        <p class="small text-muted">In digital forensics, JPEG segment inspection is crucial for extracting EXIF metadata and detecting image manipulation. Nandha Kumar M's research shows that analyzing JPEG segments can reveal important clues about image authenticity.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>Penetration Testing</h6>
+                        <p class="small text-muted">JPEG segment analysis is important for penetration testing when examining images that may contain sensitive metadata or embedded malicious content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../header-footer.js"></script>
+    <script src="jpeg-segment-inspector.js"></script>
+</body>
+</html>

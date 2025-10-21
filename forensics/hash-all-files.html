@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hash All Files - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional file hashing tool by Nandha Kumar M. Generate hashes for all files in a directory for integrity verification.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-file-signature me-2"></i>Hash All Files
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Generate cryptographic hashes for all files in a directory to verify integrity and detect modifications. Essential for digital forensics and incident response.
+            </p>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">Directory Upload (ZIP/RAR)</label>
+                        <input type="file" id="directoryUpload" class="form-control" accept=".zip,.rar,.7z">
+                    </div>
+                    
+                    <div class="d-flex gap-2 mb-3">
+                        <button id="hashAllFiles" class="btn btn-primary">
+                            <i class="fas fa-calculator me-2"></i>Hash All Files
+                        </button>
+                        <button id="clearAll" class="btn btn-secondary">
+                            <i class="fas fa-eraser me-2"></i>Clear All
+                        </button>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Processing Information</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <strong>Archive Name:</strong> <span id="archiveName">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Total Files:</strong> <span id="totalFiles">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Processed:</strong> <span id="processedFiles">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Failed:</strong> <span id="failedFiles">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Processing Time:</strong> <span id="processingTime">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Hash Algorithms</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="md5Check" checked>
+                                        <label class="form-check-label" for="md5Check">MD5</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="sha1Check" checked>
+                                        <label class="form-check-label" for="sha1Check">SHA-1</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="sha256Check" checked>
+                                        <label class="form-check-label" for="sha256Check">SHA-256</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="sha512Check">
+                                        <label class="form-check-label" for="sha512Check">SHA-512</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="crc32Check">
+                                        <label class="form-check-label" for="crc32Check">CRC32</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <h6>File Hashes</h6>
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>File Name</th>
+                                        <th>Size</th>
+                                        <th>MD5</th>
+                                        <th>SHA-1</th>
+                                        <th>SHA-256</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="hashTable">
+                                    <!-- Results will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <h6>Processing Log</h6>
+                        <pre id="processingLog" class="text-start bg-dark text-light p-3 rounded" style="height: 200px; overflow-y: auto;"></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-info-circle me-2"></i>About File Hashing</h5>
+                </div>
+                <div class="card-body">
+                    <p>File hashing generates unique digital fingerprints for files, enabling integrity verification and duplicate detection. Different algorithms offer varying security levels.</p>
+                    <h6>Common Hash Algorithms:</h6>
+                    <ul>
+                        <li><strong>MD5:</strong> 128-bit hash, fast but cryptographically broken</li>
+                        <li><strong>SHA-1:</strong> 160-bit hash, deprecated for security</li>
+                        <li><strong>SHA-256:</strong> 256-bit hash, current security standard</li>
+                        <li><strong>SHA-512:</strong> 512-bit hash, enhanced security</li>
+                        <li><strong>CRC32:</strong> 32-bit checksum, error detection</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-search me-2"></i>Digital Forensics</h6>
+                        <p class="small text-muted">In digital forensics, generating hashes for all files is crucial for establishing baseline integrity and detecting tampering. Nandha Kumar M's research shows that comprehensive hashing helps in chain of custody documentation.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>Incident Response</h6>
+                        <p class="small text-muted">File hashing is essential for incident response to verify the integrity of collected evidence and identify potential malware through hash comparison with threat intelligence databases.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../header-footer.js"></script>
+    <script src="hash-all-files.js"></script>
+</body>
+</html>

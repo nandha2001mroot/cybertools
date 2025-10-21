@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNG Chunk Analyzer - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional PNG chunk analyzer by Nandha Kumar M. Analyze PNG chunks for digital forensics and steganography detection.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-image me-2"></i>PNG Chunk Analyzer
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Analyze PNG image chunks to detect hidden data and metadata. Essential for digital forensics and steganography analysis.
+            </p>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">PNG Image Upload</label>
+                        <input type="file" id="pngFileUpload" class="form-control" accept=".png">
+                    </div>
+                    
+                    <div class="d-flex gap-2 mb-3">
+                        <button id="analyzeChunks" class="btn btn-primary">
+                            <i class="fas fa-search me-2"></i>Analyze PNG Chunks
+                        </button>
+                        <button id="clearAll" class="btn btn-secondary">
+                            <i class="fas fa-eraser me-2"></i>Clear All
+                        </button>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Image Information</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <strong>File Name:</strong> <span id="fileName">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>File Size:</strong> <span id="fileSize">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Dimensions:</strong> <span id="dimensions">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Bit Depth:</strong> <span id="bitDepth">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Color Type:</strong> <span id="colorType">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Chunk Analysis</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <strong>Total Chunks:</strong> <span id="totalChunks">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Critical Chunks:</strong> <span id="criticalChunks">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Ancillary Chunks:</strong> <span id="ancillaryChunks">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Suspicious Chunks:</strong> <span id="suspiciousChunks">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Hidden Data:</strong> <span id="hiddenData">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <h6>PNG Chunks</h6>
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Chunk</th>
+                                        <th>Type</th>
+                                        <th>Length</th>
+                                        <th>Offset</th>
+                                        <th>Critical</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="chunkTable">
+                                    <!-- Results will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <h6>Metadata Analysis</h6>
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Tag</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="metadataTable">
+                                    <!-- Results will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-info-circle me-2"></i>About PNG Chunks</h5>
+                </div>
+                <div class="card-body">
+                    <p>PNG images are composed of chunks containing different types of data. Each chunk has a specific purpose and can contain metadata or hidden information.</p>
+                    <h6>Common PNG Chunks:</h6>
+                    <ul>
+                        <li><strong>IHDR:</strong> Image header with dimensions and properties</li>
+                        <li><strong>PLTE:</strong> Palette for indexed-color images</li>
+                        <li><strong>IDAT:</strong> Image data chunks</li>
+                        <li><strong>IEND:</strong> Image trailer marker</li>
+                        <li><strong>tEXt:</strong> Textual data</li>
+                        <li><strong>zTXt:</strong> Compressed textual data</li>
+                        <li><strong>iTXt:</strong> International textual data</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-search me-2"></i>Digital Forensics</h6>
+                        <p class="small text-muted">In digital forensics, PNG chunk analysis is crucial for detecting hidden data and metadata in images. Nandha Kumar M's research shows that steganography techniques often utilize ancillary PNG chunks to conceal information.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>Malware Analysis</h6>
+                        <p class="small text-muted">PNG chunk analysis is important for malware analysis when examining suspicious images that may contain embedded malicious payloads.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../header-footer.js"></script>
+    <script src="png-chunk-analyzer.js"></script>
+</body>
+</html>

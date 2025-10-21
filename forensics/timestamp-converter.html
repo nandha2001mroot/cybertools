@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timestamp Converter - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional timestamp converter by Nandha Kumar M. Convert between different timestamp formats for digital forensics.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-clock me-2"></i>Timestamp Converter
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Convert between different timestamp formats used in digital forensics and incident response. Essential for timeline analysis.
+            </p>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">Timestamp Input</label>
+                        <input type="text" id="timestampInput" class="form-control" placeholder="Enter timestamp (e.g., 1640995200, 2022-01-01 00:00:00)">
+                    </div>
+                    
+                    <div class="d-flex gap-2 mb-3">
+                        <button id="convertTimestamp" class="btn btn-primary">
+                            <i class="fas fa-exchange-alt me-2"></i>Convert Timestamp
+                        </button>
+                        <button id="clearAll" class="btn btn-secondary">
+                            <i class="fas fa-eraser me-2"></i>Clear All
+                        </button>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Input Analysis</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <strong>Detected Format:</strong> <span id="detectedFormat">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Epoch Time:</strong> <span id="epochTime">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>UTC Time:</strong> <span id="utcTime">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Local Time:</strong> <span id="localTime">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Conversion Options</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="unixCheck" checked>
+                                        <label class="form-check-label" for="unixCheck">Unix Timestamp</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="windowsCheck" checked>
+                                        <label class="form-check-label" for="windowsCheck">Windows FILETIME</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="isoCheck" checked>
+                                        <label class="form-check-label" for="isoCheck">ISO 8601</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="rfcCheck">
+                                        <label class="form-check-label" for="rfcCheck">RFC 2822</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <h6>Converted Timestamps</h6>
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Format</th>
+                                        <th>Value</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="convertedTable">
+                                    <!-- Results will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <h6>Timeline Context</h6>
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Event</th>
+                                        <th>Timestamp</th>
+                                        <th>Relative Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="timelineTable">
+                                    <!-- Results will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-info-circle me-2"></i>About Timestamps</h5>
+                </div>
+                <div class="card-body">
+                    <p>Timestamps are used to record when events occurred in computer systems. Different systems use different timestamp formats, requiring conversion for analysis.</p>
+                    <h6>Common Timestamp Formats:</h6>
+                    <ul>
+                        <li><strong>Unix Timestamp:</strong> Seconds since Jan 1, 1970 (UTC)</li>
+                        <li><strong>Windows FILETIME:</strong> 100-nanosecond intervals since Jan 1, 1601 (UTC)</li>
+                        <li><strong>ISO 8601:</strong> Standardized date/time format (YYYY-MM-DDTHH:MM:SS)</li>
+                        <li><strong>RFC 2822:</strong> Email date format (Day, DD Mon YYYY HH:MM:SS TZ)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-search me-2"></i>Digital Forensics</h6>
+                        <p class="small text-muted">In digital forensics, timestamp conversion is crucial for creating accurate timelines and correlating events across different systems. Nandha Kumar M's research shows that precise timestamp analysis helps establish event sequences in investigations.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>Incident Response</h6>
+                        <p class="small text-muted">Timestamp conversion is essential for incident response to correlate log entries from different sources and establish attack timelines.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../header-footer.js"></script>
+    <script src="timestamp-converter.js"></script>
+</body>
+</html>
