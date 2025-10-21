@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF Generator - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional CTF challenge generator by Nandha Kumar M. Create Capture The Flag challenges for cybersecurity training.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-flag me-2"></i>CTF Challenge Generator
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Generate Capture The Flag (CTF) challenges for cybersecurity training and competitions. Essential for security education.
+            </p>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Challenge Category</label>
+                            <select id="challengeCategory" class="form-select">
+                                <option value="web">Web Exploitation</option>
+                                <option value="crypto">Cryptography</option>
+                                <option value="forensics">Forensics</option>
+                                <option value="reverse">Reverse Engineering</option>
+                                <option value="pwn">Binary Exploitation</option>
+                                <option value="misc">Miscellaneous</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Difficulty Level</label>
+                            <select id="difficultyLevel" class="form-select">
+                                <option value="easy">Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="hard">Hard</option>
+                                <option value="insane">Insane</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex gap-2 mb-3">
+                        <button id="generateChallenge" class="btn btn-primary">
+                            <i class="fas fa-flag me-2"></i>Generate CTF Challenge
+                        </button>
+                        <button id="clearAll" class="btn btn-secondary">
+                            <i class="fas fa-eraser me-2"></i>Clear All
+                        </button>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Challenge Information</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <strong>Title:</strong> <span id="challengeTitle">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Points:</strong> <span id="challengePoints">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Category:</strong> <span id="challengeCategoryDisplay">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Difficulty:</strong> <span id="challengeDifficulty">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Hint:</strong> <span id="challengeHint">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Challenge Details</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <strong>Description:</strong> <span id="challengeDescription">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Objective:</strong> <span id="challengeObjective">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Solution Approach:</strong> <span id="solutionApproach">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Learning Outcome:</strong> <span id="learningOutcome">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <h6>Generated Challenge</h6>
+                        <div class="card">
+                            <div class="card-body">
+                                <pre id="generatedChallenge" class="text-start bg-dark text-light p-3 rounded"></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <h6>Challenge Files</h6>
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>File Name</th>
+                                        <th>Type</th>
+                                        <th>Size</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="challengeFiles">
+                                    <!-- Results will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-info-circle me-2"></i>About CTF Challenges</h5>
+                </div>
+                <div class="card-body">
+                    <p>Capture The Flag (CTF) competitions are cybersecurity contests where participants solve challenges to earn points. They're excellent for hands-on learning and skill development.</p>
+                    <h6>Common CTF Categories:</h6>
+                    <ul>
+                        <li><strong>Web Exploitation:</strong> Vulnerable web applications</li>
+                        <li><strong>Cryptography:</strong> Encryption and encoding challenges</li>
+                        <li><strong>Forensics:</strong> Digital evidence analysis</li>
+                        <li><strong>Reverse Engineering:</strong> Analyzing compiled programs</li>
+                        <li><strong>Binary Exploitation:</strong> Memory corruption vulnerabilities</li>
+                        <li><strong>Miscellaneous:</strong> Various other challenges</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-graduation-cap me-2"></i>Security Education</h6>
+                        <p class="small text-muted">In security education, CTF challenges provide hands-on experience with real-world vulnerabilities. Nandha Kumar M's research shows that practicing with CTF challenges helps develop practical security skills.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>Penetration Testing</h6>
+                        <p class="small text-muted">CTF challenges are essential for penetration testing training, helping practitioners understand attack vectors and defense mechanisms.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../header-footer.js"></script>
+    <script src="ctf-generator.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOTP Verifier - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional TOTP verifier by Nandha Kumar M. Verify Time-Based One-Time Passwords for security education.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-clock me-2"></i>TOTP Verifier
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Verify Time-Based One-Time Passwords (TOTP) for security awareness and authentication testing. Essential for MFA education.
+            </p>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Secret Key (Base32)</label>
+                            <input type="text" id="secretKey" class="form-control" placeholder="Enter TOTP secret key...">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">TOTP Code</label>
+                            <input type="text" id="totpCode" class="form-control" placeholder="Enter 6-digit TOTP code...">
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex gap-2 mb-3">
+                        <button id="verifyTOTP" class="btn btn-primary">
+                            <i class="fas fa-check-circle me-2"></i>Verify TOTP
+                        </button>
+                        <button id="generateTOTP" class="btn btn-secondary">
+                            <i class="fas fa-key me-2"></i>Generate TOTP
+                        </button>
+                        <button id="clearAll" class="btn btn-secondary">
+                            <i class="fas fa-eraser me-2"></i>Clear All
+                        </button>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Verification Results</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <strong>Code Valid:</strong> <span id="codeValid">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Time Window:</strong> <span id="timeWindow">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Algorithm:</strong> <span id="algorithm">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Digits:</strong> <span id="digits">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Period:</strong> <span id="period">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Security Analysis</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <strong>Security Level:</strong> <span id="securityLevel">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Weaknesses:</strong> <span id="weaknesses">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Brute Force Resistance:</strong> <span id="bruteForceResistance">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Replay Protection:</strong> <span id="replayProtection">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Recommendations:</strong> <span id="recommendations">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <h6>Current TOTP</h6>
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <div class="display-4 fw-bold text-primary" id="currentTOTP">------</div>
+                                <div class="mt-2">
+                                    <div class="progress">
+                                        <div id="timeProgress" class="progress-bar" role="progressbar" style="width: 0%"></div>
+                                    </div>
+                                    <div class="mt-1" id="timeRemaining">30s remaining</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <h6>Verification History</h6>
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Timestamp</th>
+                                        <th>Code</th>
+                                        <th>Status</th>
+                                        <th>Time Window</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="verificationHistory">
+                                    <!-- Results will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-info-circle me-2"></i>About TOTP</h5>
+                </div>
+                <div class="card-body">
+                    <p>Time-Based One-Time Password (TOTP) is an algorithm that computes a one-time password using the current time as a variable. It is widely used for two-factor authentication (2FA).</p>
+                    <h6>TOTP Characteristics:</h6>
+                    <ul>
+                        <li><strong>Algorithm:</strong> HMAC-SHA-1 (default) or other hash functions</li>
+                        <li><strong>Digits:</strong> Typically 6 or 8 digits</li>
+                        <li><strong>Period:</strong> Usually 30 seconds</li>
+                        <li><strong>Security:</strong> Provides strong two-factor authentication</li>
+                        <li><strong>Implementation:</strong> Defined in RFC 6238</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-shield-alt me-2"></i>Authentication Security</h6>
+                        <p class="small text-muted">In authentication security, TOTP verification is essential for understanding multi-factor authentication mechanisms. Nandha Kumar M's research shows that TOTP significantly reduces account takeover risks when properly implemented.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>Penetration Testing</h6>
+                        <p class="small text-muted">TOTP verification is important for penetration testing to validate two-factor authentication implementations and identify potential bypass techniques.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../header-footer.js"></script>
+    <script src="totp-verifier.js"></script>
+</body>
+</html>
