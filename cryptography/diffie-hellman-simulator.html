@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diffie-Hellman Simulator - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional Diffie-Hellman key exchange simulator by Nandha Kumar M. Educational tool for understanding secure key exchange.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-key me-2"></i>Diffie-Hellman Key Exchange Simulator
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Educational simulator demonstrating the Diffie-Hellman key exchange protocol for secure communication over insecure channels.
+            </p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-dark">
+                            <h5><i class="fas fa-user me-2"></i>Party A</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">Private Key (a)</label>
+                                <input type="number" id="privateKeyA" class="form-control" placeholder="Enter private key for Party A">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Public Key (A)</label>
+                                <input type="text" id="publicKeyA" class="form-control" readonly placeholder="Generated public key">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-dark">
+                            <h5><i class="fas fa-user me-2"></i>Party B</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">Private Key (b)</label>
+                                <input type="number" id="privateKeyB" class="form-control" placeholder="Enter private key for Party B">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Public Key (B)</label>
+                                <input type="text" id="publicKeyB" class="form-control" readonly placeholder="Generated public key">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-globe me-2"></i>Shared Parameters</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Prime (p)</label>
+                            <input type="number" id="prime" class="form-control" value="23" placeholder="Enter prime number">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Generator (g)</label>
+                            <input type="number" id="generator" class="form-control" value="5" placeholder="Enter generator">
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex gap-2 mb-3">
+                        <button id="calculateKeys" class="btn btn-primary">
+                            <i class="fas fa-calculator me-2"></i>Calculate Keys
+                        </button>
+                        <button id="generateParams" class="btn btn-secondary">
+                            <i class="fas fa-random me-2"></i>Generate Parameters
+                        </button>
+                        <button id="clearAll" class="btn btn-secondary">
+                            <i class="fas fa-eraser me-2"></i>Clear All
+                        </button>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Shared Secret (A)</h6>
+                                </div>
+                                <div class="card-body">
+                                    <p id="sharedSecretA">-</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Shared Secret (B)</h6>
+                                </div>
+                                <div class="card-body">
+                                    <p id="sharedSecretB">-</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-info-circle me-2"></i>About Diffie-Hellman</h5>
+                </div>
+                <div class="card-body">
+                    <p>The Diffie-Hellman key exchange is a method of securely exchanging cryptographic keys over a public channel. It was one of the first public-key protocols as originally conceptualized by Ralph Merkle and named after Whitfield Diffie and Martin Hellman.</p>
+                    <h6>Key Features:</h6>
+                    <ul>
+                        <li>Enables secure key exchange over insecure channels</li>
+                        <li>Based on the discrete logarithm problem</li>
+                        <li>Used in many cryptographic protocols</li>
+                        <li>Foundation for modern secure communication</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>GraphQL Security</h6>
+                        <p class="small text-muted">In GraphQL introspection testing, understanding Diffie-Hellman helps in analyzing key exchange mechanisms used in API authentication and secure communication protocols.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-network-wired me-2"></i>Web Security</h6>
+                        <p class="small text-muted">Nandha Kumar M's research shows that Diffie-Hellman is fundamental for understanding secure key exchange in TLS/SSL protocols used by web applications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../header-footer.js"></script>
+    <script src="diffie-hellman-simulator.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-Time Pad - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional One-Time Pad tool by Nandha Kumar M. Theoretically unbreakable encryption for cybersecurity education.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-key me-2"></i>One-Time Pad
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Theoretically unbreakable encryption method that uses a random key of the same length as the plaintext. The key is used only once.
+            </p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-dark">
+                            <h5><i class="fas fa-lock me-2"></i>Encryption</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">Plaintext</label>
+                                <textarea id="plaintext" class="form-control" rows="4" placeholder="Enter plaintext to encrypt..."></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Key</label>
+                                <textarea id="encryptionKey" class="form-control" rows="4" placeholder="Enter encryption key (same length as plaintext)"></textarea>
+                            </div>
+                            <button id="encryptBtn" class="btn btn-primary">
+                                <i class="fas fa-lock me-2"></i>Encrypt
+                            </button>
+                            <button id="generateKey" class="btn btn-secondary ms-2">
+                                <i class="fas fa-key me-2"></i>Generate Key
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-dark">
+                            <h5><i class="fas fa-unlock me-2"></i>Decryption</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">Ciphertext</label>
+                                <textarea id="ciphertext" class="form-control" rows="4" placeholder="Enter ciphertext to decrypt..."></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Key</label>
+                                <textarea id="decryptionKey" class="form-control" rows="4" placeholder="Enter decryption key"></textarea>
+                            </div>
+                            <button id="decryptBtn" class="btn btn-success">
+                                <i class="fas fa-unlock me-2"></i>Decrypt
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-dark">
+                            <h5><i class="fas fa-arrow-down me-2"></i>Encrypted Output</h5>
+                        </div>
+                        <div class="card-body">
+                            <textarea id="encryptedOutput" class="form-control" rows="4" readonly></textarea>
+                            <button id="copyEncrypted" class="btn btn-outline-primary mt-2">
+                                <i class="fas fa-copy me-2"></i>Copy Encrypted
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-dark">
+                            <h5><i class="fas fa-arrow-down me-2"></i>Decrypted Output</h5>
+                        </div>
+                        <div class="card-body">
+                            <textarea id="decryptedOutput" class="form-control" rows="4" readonly></textarea>
+                            <button id="copyDecrypted" class="btn btn-outline-success mt-2">
+                                <i class="fas fa-copy me-2"></i>Copy Decrypted
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-info-circle me-2"></i>About One-Time Pad</h5>
+                </div>
+                <div class="card-body">
+                    <p>The One-Time Pad (OTP) is an encryption technique that cannot be cracked if used correctly. It requires the key to be truly random, at least as long as the plaintext, never reused in whole or part, and kept completely secret.</p>
+                    <h6>Characteristics:</h6>
+                    <ul>
+                        <li>Theoretically unbreakable encryption</li>
+                        <li>Requires key of same length as plaintext</li>
+                        <li>Key must be used only once</li>
+                        <li>Perfect secrecy when implemented correctly</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h6>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>GraphQL Security</h6>
+                        <p class="small text-muted">Understanding One-Time Pad principles helps in analyzing modern encryption implementations, including those that might be used in GraphQL introspection protection mechanisms.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-search me-2"></i>Security Education</h6>
+                        <p class="small text-muted">Nandha Kumar M's research emphasizes the importance of understanding theoretical cryptography for practical security analysis and penetration testing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../header-footer.js"></script>
+    <script src="one-time-pad.js"></script>
+</body>
+</html>

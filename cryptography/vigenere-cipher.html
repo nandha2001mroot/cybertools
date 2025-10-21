@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vigenère Cipher - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional Vigenère cipher tool by Nandha Kumar M. Historical encryption for cybersecurity education.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-key me-2"></i>Vigenère Cipher
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Historical polyalphabetic substitution cipher that uses a keyword to encrypt text. Useful for understanding cryptographic principles.
+            </p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-dark">
+                            <h5><i class="fas fa-lock me-2"></i>Encryption</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">Text to Encrypt</label>
+                                <textarea id="encryptInput" class="form-control" rows="4" placeholder="Enter text to encrypt..."></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Encryption Key</label>
+                                <input type="text" id="encryptKey" class="form-control" placeholder="Enter encryption key">
+                            </div>
+                            <button id="encryptBtn" class="btn btn-primary">
+                                <i class="fas fa-lock me-2"></i>Encrypt
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-dark">
+                            <h5><i class="fas fa-unlock me-2"></i>Decryption</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">Encrypted Text</label>
+                                <textarea id="decryptInput" class="form-control" rows="4" placeholder="Enter encrypted text..."></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Decryption Key</label>
+                                <input type="text" id="decryptKey" class="form-control" placeholder="Enter decryption key">
+                            </div>
+                            <button id="decryptBtn" class="btn btn-success">
+                                <i class="fas fa-unlock me-2"></i>Decrypt
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-dark">
+                            <h5><i class="fas fa-arrow-down me-2"></i>Encrypted Output</h5>
+                        </div>
+                        <div class="card-body">
+                            <textarea id="encryptedOutput" class="form-control" rows="4" readonly></textarea>
+                            <button id="copyEncrypted" class="btn btn-outline-primary mt-2">
+                                <i class="fas fa-copy me-2"></i>Copy Encrypted
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-dark">
+                            <h5><i class="fas fa-arrow-down me-2"></i>Decrypted Output</h5>
+                        </div>
+                        <div class="card-body">
+                            <textarea id="decryptedOutput" class="form-control" rows="4" readonly></textarea>
+                            <button id="copyDecrypted" class="btn btn-outline-success mt-2">
+                                <i class="fas fa-copy me-2"></i>Copy Decrypted
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-info-circle me-2"></i>About Vigenère Cipher</h5>
+                </div>
+                <div class="card-body">
+                    <p>The Vigenère cipher is a method of encrypting alphabetic text by using a simple form of polyalphabetic substitution. It uses a keyword to determine which alphabet to use for each letter.</p>
+                    <h6>Historical Significance:</h6>
+                    <ul>
+                        <li>Used extensively during the Renaissance</li>
+                        <li>Considered unbreakable for centuries</li>
+                        <li>Foundation for modern cryptographic concepts</li>
+                        <li>Educational value in understanding encryption</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>GraphQL Security</h6>
+                        <p class="small text-muted">Understanding historical ciphers like Vigenère helps in analyzing modern encryption weaknesses, including those that might appear in GraphQL introspection payloads.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-search me-2"></i>Security Education</h6>
+                        <p class="small text-muted">Nandha Kumar M's research emphasizes the importance of understanding classical cryptography for penetration testing and security analysis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../header-footer.js"></script>
+    <script src="vigenere-cipher.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PBKDF2 Generator - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional PBKDF2 generator by Nandha Kumar M. Password-based key derivation for secure password storage.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-key me-2"></i>PBKDF2 Generator
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Password-Based Key Derivation Function 2 (PBKDF2) generator for secure password hashing and key derivation.
+            </p>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" id="passwordInput" class="form-control" placeholder="Enter password to hash">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Salt</label>
+                        <input type="text" id="saltInput" class="form-control" placeholder="Enter salt (or leave empty to generate)">
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Iterations</label>
+                            <input type="number" id="iterationsInput" class="form-control" value="100000" min="1000" max="1000000">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Hash Algorithm</label>
+                            <select id="algorithmInput" class="form-select">
+                                <option value="SHA-256">SHA-256</option>
+                                <option value="SHA-1">SHA-1</option>
+                                <option value="SHA-512">SHA-512</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex gap-2 mb-3">
+                        <button id="generateHash" class="btn btn-primary">
+                            <i class="fas fa-calculator me-2"></i>Generate PBKDF2 Hash
+                        </button>
+                        <button id="generateSalt" class="btn btn-secondary">
+                            <i class="fas fa-key me-2"></i>Generate Salt
+                        </button>
+                        <button id="clearAll" class="btn btn-secondary">
+                            <i class="fas fa-eraser me-2"></i>Clear All
+                        </button>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Generated Hash</label>
+                        <textarea id="hashOutput" class="form-control" rows="4" readonly></textarea>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button id="copyHash" class="btn btn-outline-primary">
+                            <i class="fas fa-copy me-2"></i>Copy Hash
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-info-circle me-2"></i>About PBKDF2</h5>
+                </div>
+                <div class="card-body">
+                    <p>PBKDF2 (Password-Based Key Derivation Function 2) is a key derivation function that applies a pseudorandom function to the input password along with a salt value and repeats the process many times to produce a derived key.</p>
+                    <h6>Security Features:</h6>
+                    <ul>
+                        <li>Protects against dictionary attacks</li>
+                        <li>Uses salt to prevent rainbow table attacks</li>
+                        <li>Configurable iteration count for security</li>
+                        <li>Widely used in password storage systems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>GraphQL Security</h6>
+                        <p class="small text-muted">In GraphQL introspection testing, PBKDF2 might be used for API authentication tokens or password hashing in GraphQL resolvers.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-network-wired me-2"></i>Web Security</h6>
+                        <p class="small text-muted">Nandha Kumar M's research shows that PBKDF2 is essential for secure password storage in web applications and APIs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../header-footer.js"></script>
+    <script src="pbkdf2-generator.js"></script>
+</body>
+</html>
