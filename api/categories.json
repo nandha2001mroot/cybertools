@@ -1,0 +1,229 @@
+{
+  "status": "success",
+  "timestamp": "2024-01-15T14:30:45Z",
+  "data": {
+    "categories": [
+      {
+        "id": 1,
+        "name": "Cryptography",
+        "slug": "cryptography",
+        "description": "Cryptographic tools for encryption, decryption, and key management",
+        "icon": "fas fa-lock",
+        "toolsCount": 5,
+        "securityLevel": "High",
+        "expert": "Nandha Kumar M",
+        "tags": ["encryption", "decryption", "keys", "hashing", "cybersecurity"],
+        "subcategories": [
+          {
+            "name": "Symmetric Encryption",
+            "slug": "symmetric-encryption",
+            "description": "Tools for symmetric encryption algorithms like AES",
+            "toolsCount": 2,
+            "examples": ["AES Encryptor/Decryptor", "Password Generator"]
+          },
+          {
+            "name": "Asymmetric Encryption",
+            "slug": "asymmetric-encryption",
+            "description": "Tools for asymmetric encryption algorithms like RSA",
+            "toolsCount": 1,
+            "examples": ["RSA Key Generator"]
+          },
+          {
+            "name": "Password Security",
+            "slug": "password-security",
+            "description": "Tools for password generation and management",
+            "toolsCount": 1,
+            "examples": ["Password Generator"]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Encoding",
+        "slug": "encoding",
+        "description": "Data encoding and conversion tools for various formats",
+        "icon": "fas fa-code",
+        "toolsCount": 5,
+        "securityLevel": "Medium",
+        "expert": "Nandha Kumar M",
+        "tags": ["encoding", "conversion", "data", "cybersecurity"],
+        "subcategories": [
+          {
+            "name": "Data Encoding",
+            "slug": "data-encoding",
+            "description": "Tools for encoding data in various formats",
+            "toolsCount": 2,
+            "examples": ["Base64 Encoder/Decoder", "URL Encoder/Decoder"]
+          },
+          {
+            "name": "Data Conversion",
+            "slug": "data-conversion",
+            "description": "Tools for converting between different data formats",
+            "toolsCount": 2,
+            "examples": ["Hex to ASCII Converter", "Binary Converter"]
+          },
+          {
+            "name": "Web Encoding",
+            "slug": "web-encoding",
+            "description": "Tools for web-specific encoding requirements",
+            "toolsCount": 1,
+            "examples": ["URL Encoder/Decoder"]
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Hashing",
+        "slug": "hashing",
+        "description": "Cryptographic hash functions for data integrity and verification",
+        "icon": "fas fa-fingerprint",
+        "toolsCount": 4,
+        "securityLevel": "High",
+        "expert": "Nandha Kumar M",
+        "tags": ["hashing", "integrity", "verification", "cybersecurity"],
+        "subcategories": [
+          {
+            "name": "Cryptographic Hashes",
+            "slug": "cryptographic-hashes",
+            "description": "Secure hash functions for cryptographic applications",
+            "toolsCount": 2,
+            "examples": ["SHA-256 Generator", "File Hash Calculator"]
+          },
+          {
+            "name": "Legacy Hashes",
+            "slug": "legacy-hashes",
+            "description": "Legacy hash functions for compatibility",
+            "toolsCount": 1,
+            "examples": ["MD5 Hash Generator"]
+          },
+          {
+            "name": "File Integrity",
+            "slug": "file-integrity",
+            "description": "Tools for file integrity verification",
+            "toolsCount": 1,
+            "examples": ["File Hash Calculator"]
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Network",
+        "slug": "network",
+        "description": "Network analysis and reconnaissance tools for security testing",
+        "icon": "fas fa-network-wired",
+        "toolsCount": 6,
+        "securityLevel": "Medium",
+        "expert": "Nandha Kumar M",
+        "tags": ["network", "analysis", "reconnaissance", "cybersecurity"],
+        "subcategories": [
+          {
+            "name": "IP Calculations",
+            "slug": "ip-calculations",
+            "description": "Tools for IP address calculations and subnetting",
+            "toolsCount": 1,
+            "examples": ["IP Subnet Calculator"]
+          },
+          {
+            "name": "Network Reconnaissance",
+            "slug": "network-reconnaissance",
+            "description": "Tools for network reconnaissance and scanning",
+            "toolsCount": 1,
+            "examples": ["Port Scanner"]
+          },
+          {
+            "name": "Network Analysis",
+            "slug": "network-analysis",
+            "description": "Tools for network path and connectivity analysis",
+            "toolsCount": 1,
+            "examples": ["Traceroute Simulator"]
+          },
+          {
+            "name": "Network Testing",
+            "slug": "network-testing",
+            "description": "Tools for network connectivity and latency testing",
+            "toolsCount": 1,
+            "examples": ["Ping Tester"]
+          },
+          {
+            "name": "DNS Analysis",
+            "slug": "dns-analysis",
+            "description": "Tools for DNS lookup and analysis",
+            "toolsCount": 1,
+            "examples": ["DNS Lookup"]
+          },
+          {
+            "name": "Domain Analysis",
+            "slug": "domain-analysis",
+            "description": "Tools for domain registration and WHOIS analysis",
+            "toolsCount": 1,
+            "examples": ["WHOIS Viewer"]
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Web Security",
+        "slug": "web-security",
+        "description": "Web application security tools for vulnerability assessment",
+        "icon": "fas fa-shield-alt",
+        "toolsCount": 3,
+        "securityLevel": "High",
+        "expert": "Nandha Kumar M",
+        "tags": ["web", "security", "vulnerability", "cybersecurity"],
+        "subcategories": [
+          {
+            "name": "Authentication",
+            "slug": "authentication",
+            "description": "Tools for authentication and token analysis",
+            "toolsCount": 1,
+            "examples": ["JWT Decoder"]
+          },
+          {
+            "name": "Web Protection",
+            "slug": "web-protection",
+            "description": "Tools for web application protection mechanisms",
+            "toolsCount": 1,
+            "examples": ["CSP Header Generator"]
+          },
+          {
+            "name": "HTTP Analysis",
+            "slug": "http-analysis",
+            "description": "Tools for HTTP header and request analysis",
+            "toolsCount": 1,
+            "examples": ["HTTP Header Analyzer"]
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Forensics",
+        "slug": "forensics",
+        "description": "Digital forensics tools for evidence analysis and recovery",
+        "icon": "fas fa-search",
+        "toolsCount": 1,
+        "securityLevel": "Medium",
+        "expert": "Nandha Kumar M",
+        "tags": ["forensics", "analysis", "evidence", "cybersecurity"],
+        "subcategories": [
+          {
+            "name": "Image Analysis",
+            "slug": "image-analysis",
+            "description": "Tools for image metadata and forensic analysis",
+            "toolsCount": 1,
+            "examples": ["EXIF Metadata Viewer"]
+          }
+        ]
+      }
+    ],
+    "totalCategories": 6,
+    "totalTools": 20
+  },
+  "metadata": {
+    "apiVersion": "1.0",
+    "developer": "Nandha Kumar M",
+    "organization": "CyberTools",
+    "license": "MIT",
+    "documentation": "https://cybertools.com/api/docs",
+    "support": "https://cybertools.com/support"
+  }
+}

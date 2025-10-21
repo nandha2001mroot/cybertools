@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Subnet Calculator - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional IP subnet calculator by Nandha Kumar M. Network analysis and subnetting for cybersecurity professionals.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-network-wired me-2"></i>IP Subnet Calculator
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Calculate subnet information for IP addresses. Essential tool for network security analysis and penetration testing.
+            </p>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">IP Address</label>
+                            <input type="text" id="ipAddress" class="form-control" placeholder="e.g., 192.168.1.1">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Subnet Mask or CIDR</label>
+                            <input type="text" id="subnetInput" class="form-control" placeholder="e.g., 255.255.255.0 or /24">
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex gap-2 mb-3">
+                        <button id="calculateSubnet" class="btn btn-primary">
+                            <i class="fas fa-calculator me-2"></i>Calculate Subnet
+                        </button>
+                        <button id="clearAll" class="btn btn-secondary">
+                            <i class="fas fa-eraser me-2"></i>Clear All
+                        </button>
+                    </div>
+
+                    <div id="subnetResults" class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Network Information</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <strong>Network Address:</strong> <span id="networkAddress">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Network Mask:</strong> <span id="networkMask">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Network CIDR:</strong> <span id="networkCIDR">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>First Host:</strong> <span id="firstHost">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Last Host:</strong> <span id="lastHost">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Broadcast Address:</strong> <span id="broadcastAddress">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Subnet Details</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <strong>Total Hosts:</strong> <span id="totalHosts">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Usable Hosts:</strong> <span id="usableHosts">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Wildcard Mask:</strong> <span id="wildcardMask">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Binary IP:</strong> <span id="binaryIP">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Class:</strong> <span id="ipClass">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5><i class="fas fa-info-circle me-2"></i>About IP Subnetting</h5>
+                </div>
+                <div class="card-body">
+                    <p>IP subnetting is the process of dividing an IP network into subnetworks by using a network design strategy that allows for the efficient allocation of IP addresses. It's crucial for:</p>
+                    <ul>
+                        <li>Network segmentation</li>
+                        <li>Security isolation</li>
+                        <li>Performance optimization</li>
+                        <li>Access control</li>
+                        <li>Penetration testing</li>
+                    </ul>
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <strong>Penetration Testing:</strong> Understanding IP subnetting is essential for network reconnaissance and identifying potential attack vectors during security assessments.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>GraphQL Security</h6>
+                        <p class="small text-muted">In network security assessments, IP subnetting knowledge helps identify GraphQL endpoints within specific network segments during penetration testing.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-mobile-alt me-2"></i>Android Security</h6>
+                        <p class="small text-muted">Nandha Kumar M's research shows that understanding IP subnetting is crucial for analyzing network traffic in Android pentesting scenarios.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-search me-2"></i>Deep Domain Discovery</h6>
+                        <p class="small text-muted">IP subnetting is essential for deep domain discovery techniques, helping identify network ranges and potential attack surfaces without tools.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../header-footer.js"></script>
+    <script src="ip-subnet-calculator.js"></script>
+</body>
+</html>

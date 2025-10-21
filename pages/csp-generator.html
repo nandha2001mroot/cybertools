@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSP Header Generator - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional Content Security Policy generator by Nandha Kumar M. Web security headers for XSS prevention.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-shield-alt me-2"></i>Content Security Policy Generator
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Generate Content Security Policy headers to prevent XSS and other injection attacks. Essential for web security.
+            </p>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">Default Sources</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="defaultSelf" checked>
+                            <label class="form-check-label" for="defaultSelf">Self ('self')</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="defaultUnsafeInline">
+                            <label class="form-check-label" for="defaultUnsafeInline">Unsafe Inline ('unsafe-inline')</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="defaultUnsafeEval">
+                            <label class="form-check-label" for="defaultUnsafeEval">Unsafe Eval ('unsafe-eval')</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Script Sources</label>
+                        <input type="text" id="scriptSrc" class="form-control" placeholder="e.g., 'self' https://example.com">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Style Sources</label>
+                        <input type="text" id="styleSrc" class="form-control" placeholder="e.g., 'self' 'unsafe-inline' https://example.com">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Image Sources</label>
+                        <input type="text" id="imgSrc" class="form-control" placeholder="e.g., 'self' data: https://*.example.com">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Connect Sources</label>
+                        <input type="text" id="connectSrc" class="form-control" placeholder="e.g., 'self' https://api.example.com">
+                    </div>
+
+                    <div class="d-flex gap-2 mb-3">
+                        <button id="generateCSP" class="btn btn-primary">
+                            <i class="fas fa-shield-alt me-2"></i>Generate CSP
+                        </button>
+                        <button id="clearAll" class="btn btn-secondary">
+                            <i class="fas fa-eraser me-2"></i>Clear All
+                        </button>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Generated CSP Header</label>
+                        <textarea id="cspOutput" class="form-control" rows="4" readonly></textarea>
+                        <button id="copyCSP" class="btn btn-outline-primary mt-2">
+                            <i class="fas fa-copy me-2"></i>Copy CSP Header
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5><i class="fas fa-info-circle me-2"></i>About Content Security Policy</h5>
+                </div>
+                <div class="card-body">
+                    <p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks.</p>
+                    <h6>Common Directives:</h6>
+                    <ul>
+                        <li><strong>default-src:</strong> Default policy for fetching resources</li>
+                        <li><strong>script-src:</strong> Valid sources for JavaScript</li>
+                        <li><strong>style-src:</strong> Valid sources for stylesheets</li>
+                        <li><strong>img-src:</strong> Valid sources for images</li>
+                        <li><strong>connect-src:</strong> Valid sources for fetch, XHR, WebSocket</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>GraphQL Security</h6>
+                        <p class="small text-muted">In GraphQL introspection testing, proper CSP headers can prevent XSS attacks that might be used to steal GraphQL tokens or inject malicious queries.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-network-wired me-2"></i>Web Security</h6>
+                        <p class="small text-muted">Nandha Kumar M's research shows that CSP headers are essential for protecting web applications against injection attacks during penetration testing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../header-footer.js"></script>
+    <script src="csp-generator.js"></script>
+</body>
+</html>

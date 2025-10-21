@@ -1,0 +1,588 @@
+:root {
+    --cyber-dark: #0a0a0a;
+    --cyber-gray: #1a1a1a;
+    --cyber-accent: #00ff41;
+    --cyber-blue: #0080ff;
+    --cyber-red: #ff0055;
+    --cyber-purple: #8000ff;
+    --cyber-green: #00cc66;
+    --cyber-orange: #ff6600;
+    --text-light: #ffffff;
+    --text-gray: #cccccc;
+    --text-darker: #888888;
+}
+
+body {
+    font-family: 'Courier New', 'Source Code Pro', monospace;
+    background: linear-gradient(135deg, var(--cyber-dark), var(--cyber-gray));
+    color: var(--text-light);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 2px solid var(--cyber-accent);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(rgba(0, 255, 65, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 65, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: 1;
+}
+
+.cyber-title {
+    color: var(--cyber-accent);
+    text-shadow: 0 0 20px var(--cyber-accent);
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.cyber-subtitle {
+    color: var(--cyber-blue);
+    text-shadow: 0 0 10px var(--cyber-blue);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.cyber-link {
+    color: var(--cyber-accent);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cyber-link:hover {
+    text-shadow: 0 0 10px var(--cyber-accent);
+}
+
+.stats-display {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--cyber-accent);
+    text-shadow: 0 0 10px var(--cyber-accent);
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-gray);
+}
+
+/* Cybersecurity-themed navbar */
+.navbar {
+    background: rgba(10, 10, 10, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--cyber-accent);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: var(--cyber-accent) !important;
+    text-shadow: 0 0 10px var(--cyber-accent);
+    font-family: 'Courier New', monospace;
+    font-size: 1.5rem;
+}
+
+.navbar-brand i {
+    color: var(--cyber-accent);
+    text-shadow: 0 0 10px var(--cyber-accent);
+}
+
+.nav-link {
+    color: var(--text-gray) !important;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--cyber-accent) !important;
+    text-shadow: 0 0 5px var(--cyber-accent);
+}
+
+/* Cybersecurity-themed cards */
+.tool-card {
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid var(--cyber-blue);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tool-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(0, 255, 65, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.tool-card:hover::before {
+    transform: translateX(100%);
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--cyber-accent);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+}
+
+.tool-card i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.tool-card h5 {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.tool-card small {
+    color: var(--text-darker);
+}
+
+/* Category-specific styling */
+.tool-card.cryptography {
+    border-left: 3px solid var(--cyber-purple);
+}
+
+.tool-card.cryptography i {
+    color: var(--cyber-purple);
+    text-shadow: 0 0 10px var(--cyber-purple);
+}
+
+.tool-card.encoding {
+    border-left: 3px solid var(--cyber-blue);
+}
+
+.tool-card.encoding i {
+    color: var(--cyber-blue);
+    text-shadow: 0 0 10px var(--cyber-blue);
+}
+
+.tool-card.hashing {
+    border-left: 3px solid var(--cyber-red);
+}
+
+.tool-card.hashing i {
+    color: var(--cyber-red);
+    text-shadow: 0 0 10px var(--cyber-red);
+}
+
+.tool-card.network {
+    border-left: 3px solid var(--cyber-orange);
+}
+
+.tool-card.network i {
+    color: var(--cyber-orange);
+    text-shadow: 0 0 10px var(--cyber-orange);
+}
+
+.tool-card.web-security {
+    border-left: 3px solid var(--cyber-accent);
+}
+
+.tool-card.web-security i {
+    color: var(--cyber-accent);
+    text-shadow: 0 0 10px var(--cyber-accent);
+}
+
+.tool-card.malware {
+    border-left: 3px solid var(--cyber-red);
+}
+
+.tool-card.malware i {
+    color: var(--cyber-red);
+    text-shadow: 0 0 10px var(--cyber-red);
+}
+
+.tool-card.forensics {
+    border-left: 3px solid var(--cyber-green);
+}
+
+.tool-card.forensics i {
+    color: var(--cyber-green);
+    text-shadow: 0 0 10px var(--cyber-green);
+}
+
+.tool-card.learning {
+    border-left: 3px solid var(--cyber-purple);
+}
+
+.tool-card.learning i {
+    color: var(--cyber-purple);
+    text-shadow: 0 0 10px var(--cyber-purple);
+}
+
+/* Search section */
+.search-section {
+    background: rgba(26, 26, 26, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--cyber-blue);
+    box-shadow: 0 0 15px rgba(0, 128, 255, 0.2);
+}
+
+.form-control {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--cyber-blue);
+    color: var(--text-light);
+}
+
+.form-control:focus {
+    background: rgba(0, 0, 0, 0.7);
+    border-color: var(--cyber-accent);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+    color: var(--text-light);
+}
+
+/* Category filters */
+.category-filters .btn {
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid var(--cyber-blue);
+    color: var(--text-gray);
+    margin: 2px;
+    transition: all 0.3s ease;
+}
+
+.category-filters .btn:hover {
+    background: var(--cyber-blue);
+    color: var(--cyber-dark);
+    border-color: var(--cyber-accent);
+}
+
+.category-filters .btn.active {
+    background: var(--cyber-accent);
+    color: var(--cyber-dark);
+    border-color: var(--cyber-accent);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+}
+
+/* Ad section */
+.ad-section .card {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--cyber-red);
+    box-shadow: 0 0 15px rgba(255, 0, 85, 0.2);
+}
+
+.ad-section .card-body {
+    text-align: center;
+}
+
+.ad-section h5 {
+    color: var(--cyber-red);
+    text-shadow: 0 0 10px var(--cyber-red);
+}
+
+/* LinkedIn profile section */
+.linkedin-profile .card {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #0077b5;
+    box-shadow: 0 0 15px rgba(0, 119, 181, 0.2);
+}
+
+.linkedin-profile .card-header {
+    background: rgba(0, 119, 181, 0.1);
+    border-bottom: 1px solid #0077b5;
+    color: #0077b5;
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid var(--cyber-blue);
+    object-fit: cover;
+}
+
+/* Popular tools */
+.popular-tools .list-group-item {
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid var(--cyber-blue);
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+.popular-tools .list-group-item:hover {
+    background: rgba(0, 128, 255, 0.1);
+    border-color: var(--cyber-accent);
+    transform: translateX(5px);
+}
+
+/* Expert insights section */
+.expert-insights .card {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--cyber-purple);
+    box-shadow: 0 0 15px rgba(128, 0, 255, 0.2);
+}
+
+.expert-insights .card-header {
+    background: rgba(128, 0, 255, 0.1);
+    border-bottom: 1px solid var(--cyber-purple);
+    color: var(--cyber-purple);
+}
+
+.insight-item h6 {
+    color: var(--cyber-accent);
+    margin-bottom: 5px;
+}
+
+.insight-item i {
+    color: var(--cyber-purple);
+}
+
+/* Footer */
+.footer {
+    background: rgba(10, 10, 10, 0.95);
+    border-top: 1px solid var(--cyber-accent);
+    color: var(--text-light);
+    padding: 30px 0;
+    margin-top: 50px;
+}
+
+.footer a {
+    color: var(--text-gray);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--cyber-accent);
+    text-shadow: 0 0 5px var(--cyber-accent);
+}
+
+/* Tool page */
+.tool-page {
+    background: rgba(26, 26, 26, 0.9);
+    border-radius: 8px;
+    padding: 30px;
+    border: 1px solid var(--cyber-blue);
+    box-shadow: 0 0 20px rgba(0, 128, 255, 0.2);
+    margin: 20px 0;
+}
+
+.tool-title {
+    color: var(--cyber-accent);
+    border-bottom: 2px solid var(--cyber-accent);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px var(--cyber-accent);
+}
+
+.tool-description {
+    color: var(--text-gray);
+    margin-bottom: 25px;
+}
+
+/* Cards in tool pages */
+.card {
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid var(--cyber-blue);
+    border-radius: 8px;
+}
+
+.card-header {
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid var(--cyber-blue);
+    color: var(--cyber-accent);
+}
+
+/* Buttons */
+.btn {
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: var(--cyber-blue);
+    border-color: var(--cyber-blue);
+}
+
+.btn-primary:hover {
+    background: var(--cyber-accent);
+    border-color: var(--cyber-accent);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+}
+
+.btn-success {
+    background: var(--cyber-green);
+    border-color: var(--cyber-green);
+}
+
+.btn-success:hover {
+    background: var(--cyber-accent);
+    border-color: var(--cyber-accent);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+}
+
+.btn-outline-primary {
+    color: var(--cyber-blue);
+    border-color: var(--cyber-blue);
+}
+
+.btn-outline-primary:hover {
+    background: var(--cyber-blue);
+    color: var(--cyber-dark);
+    box-shadow: 0 0 10px rgba(0, 128, 255, 0.3);
+}
+
+/* Progress bars */
+.progress {
+    background: rgba(0, 0, 0, 0.5);
+    height: 20px;
+}
+
+.progress-bar {
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+/* Cybersecurity-themed elements */
+.cyber-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(rgba(0, 255, 65, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 65, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Animation effects */
+@keyframes cyber-pulse {
+    0% { box-shadow: 0 0 5px var(--cyber-accent); }
+    50% { box-shadow: 0 0 20px var(--cyber-accent); }
+    100% { box-shadow: 0 0 5px var(--cyber-accent); }
+}
+
+@keyframes scan {
+    0% { top: 0; }
+    100% { top: 100%; }
+}
+
+.scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(0, 255, 65, 0.1), transparent);
+    animation: scan 4s linear infinite;
+}
+
+/* Terminal-style elements */
+.terminal-output {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--cyber-green);
+    border-radius: 4px;
+    padding: 15px;
+    font-family: 'Courier New', monospace;
+    color: var(--cyber-green);
+    min-height: 100px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.terminal-prompt {
+    color: var(--cyber-green);
+    margin-bottom: 10px;
+}
+
+.terminal-prompt::before {
+    content: '> ';
+    color: var(--cyber-accent);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 0;
+    }
+    
+    .cyber-title {
+        font-size: 2.5rem;
+    }
+    
+    .cyber-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .stats-display {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    .tools-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    
+    .tool-card {
+        height: 100px;
+        font-size: 0.8rem;
+    }
+    
+    .tool-card i {
+        font-size: 1.5rem;
+    }
+}

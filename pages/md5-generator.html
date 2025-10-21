@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD5 Generator - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional MD5 hash generator by Nandha Kumar M. Cryptographic hashing for security professionals.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-fingerprint me-2"></i>MD5 Generator
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Generate MD5 hash of any text input. MD5 is a widely used hash function that produces a 128-bit hash value.
+            </p>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">Input Text</label>
+                        <textarea id="inputText" class="form-control" rows="4" placeholder="Enter text to hash..."></textarea>
+                    </div>
+                    
+                    <div class="d-flex gap-2 mb-3">
+                        <button id="generateHash" class="btn btn-primary">
+                            <i class="fas fa-calculator me-2"></i>Generate MD5 Hash
+                        </button>
+                        <button id="clearAll" class="btn btn-secondary">
+                            <i class="fas fa-eraser me-2"></i>Clear All
+                        </button>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">MD5 Hash</label>
+                        <textarea id="outputHash" class="form-control" rows="2" readonly></textarea>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button id="copyHash" class="btn btn-outline-primary">
+                            <i class="fas fa-copy me-2"></i>Copy Hash
+                        </button>
+                        <button id="compareHash" class="btn btn-outline-info">
+                            <i class="fas fa-compress-arrows-alt me-2"></i>Compare Hashes
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5><i class="fas fa-info-circle me-2"></i>About MD5</h5>
+                </div>
+                <div class="card-body">
+                    <p>MD5 (Message Digest Algorithm 5) is a widely used hash function that produces a 128-bit hash value. It's commonly used for:</p>
+                    <ul>
+                        <li>File integrity verification</li>
+                        <li>Detecting duplicate data</li>
+                        <li>Creating digital fingerprints</li>
+                        <li>Password storage (deprecated)</li>
+                    </ul>
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        <strong>Security Warning:</strong> MD5 is no longer considered cryptographically secure due to collision vulnerabilities. Use SHA-256 or stronger for security-critical applications.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>GraphQL Security</h6>
+                        <p class="small text-muted">In GraphQL introspection testing, MD5 hashes may be used in older systems for schema integrity checks, but modern security practices recommend stronger algorithms like SHA-256.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-mobile-alt me-2"></i>Android Security</h6>
+                        <p class="small text-muted">Nandha Kumar M's Android pentesting research shows that MD5 is often found in older APK files for file integrity checks, making it important for reverse engineering analysis.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-network-wired me-2"></i>Penetration Testing</h6>
+                        <p class="small text-muted">During penetration testing, MD5 hashes are often encountered in legacy systems and are useful for identifying outdated security implementations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../header-footer.js"></script>
+    <script src="md5-generator.js"></script>
+</body>
+</html>

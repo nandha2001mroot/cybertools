@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHA-256 Generator - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional SHA-256 hash generator by Nandha Kumar M. Cryptographic hashing for security professionals.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-fingerprint me-2"></i>SHA-256 Generator
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Generate SHA-256 hash of any text input. SHA-256 is a cryptographic hash function that produces a 256-bit hash value.
+            </p>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">Input Text</label>
+                        <textarea id="inputText" class="form-control" rows="4" placeholder="Enter text to hash..."></textarea>
+                    </div>
+                    
+                    <div class="d-flex gap-2 mb-3">
+                        <button id="generateHash" class="btn btn-primary">
+                            <i class="fas fa-calculator me-2"></i>Generate SHA-256 Hash
+                        </button>
+                        <button id="clearAll" class="btn btn-secondary">
+                            <i class="fas fa-eraser me-2"></i>Clear All
+                        </button>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">SHA-256 Hash</label>
+                        <textarea id="outputHash" class="form-control" rows="2" readonly></textarea>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button id="copyHash" class="btn btn-outline-primary">
+                            <i class="fas fa-copy me-2"></i>Copy Hash
+                        </button>
+                        <button id="compareHash" class="btn btn-outline-info">
+                            <i class="fas fa-compress-arrows-alt me-2"></i>Compare Hashes
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5><i class="fas fa-info-circle me-2"></i>About SHA-256</h5>
+                </div>
+                <div class="card-body">
+                    <p>SHA-256 (Secure Hash Algorithm 256-bit) is a cryptographic hash function that takes an input and produces a 256-bit (32-byte) hash value. It's commonly used for:</p>
+                    <ul>
+                        <li>Verifying data integrity</li>
+                        <li>Digital signatures</li>
+                        <li>Password hashing</li>
+                        <li>Blockchain technology</li>
+                        <li>File verification</li>
+                    </ul>
+                    <p class="text-muted">Note: SHA-256 is deterministic - the same input will always produce the same hash.</p>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>GraphQL Security</h6>
+                        <p class="small text-muted">In GraphQL introspection testing, SHA-256 hashes can be used to verify the integrity of schema responses and detect tampering attempts during security assessments.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-mobile-alt me-2"></i>Android Security</h6>
+                        <p class="small text-muted">SHA-256 hashes are commonly used in Android security to verify APK signatures and ensure app integrity during pentesting and reverse engineering.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-network-wired me-2"></i>Penetration Testing</h6>
+                        <p class="small text-muted">Nandha Kumar M's research shows that SHA-256 hashes are essential for file integrity verification during penetration testing engagements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../header-footer.js"></script>
+    <script src="sha256-generator.js"></script>
+</body>
+</html>

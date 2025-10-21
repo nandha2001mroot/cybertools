@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hex to ASCII Converter - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional hex to ASCII converter by Nandha Kumar M. Binary data analysis for cybersecurity professionals.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-hexagon me-2"></i>Hex to ASCII Converter
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Convert between hexadecimal and ASCII. Essential for binary data analysis and reverse engineering.
+            </p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-dark">
+                            <h5><i class="fas fa-lock me-2"></i>Hex to ASCII</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">Hexadecimal Input</label>
+                                <textarea id="hexInput" class="form-control" rows="4" placeholder="Enter hex values (e.g., 48656C6C6F)"></textarea>
+                            </div>
+                            <button id="hexToAsciiBtn" class="btn btn-primary">
+                                <i class="fas fa-lock me-2"></i>Convert to ASCII
+                            </button>
+                            <button id="clearHex" class="btn btn-secondary ms-2">
+                                <i class="fas fa-eraser me-2"></i>Clear
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-dark">
+                            <h5><i class="fas fa-unlock me-2"></i>ASCII to Hex</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">ASCII Input</label>
+                                <textarea id="asciiInput" class="form-control" rows="4" placeholder="Enter ASCII text"></textarea>
+                            </div>
+                            <button id="asciiToHexBtn" class="btn btn-success">
+                                <i class="fas fa-unlock me-2"></i>Convert to Hex
+                            </button>
+                            <button id="clearAscii" class="btn btn-secondary ms-2">
+                                <i class="fas fa-eraser me-2"></i>Clear
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-dark">
+                            <h5><i class="fas fa-arrow-down me-2"></i>ASCII Output</h5>
+                        </div>
+                        <div class="card-body">
+                            <textarea id="asciiOutput" class="form-control" rows="4" readonly></textarea>
+                            <button id="copyAscii" class="btn btn-outline-primary mt-2">
+                                <i class="fas fa-copy me-2"></i>Copy ASCII
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-dark">
+                            <h5><i class="fas fa-arrow-down me-2"></i>Hex Output</h5>
+                        </div>
+                        <div class="card-body">
+                            <textarea id="hexOutput" class="form-control" rows="4" readonly></textarea>
+                            <button id="copyHex" class="btn btn-outline-success mt-2">
+                                <i class="fas fa-copy me-2"></i>Copy Hex
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-info-circle me-2"></i>About Hex-ASCII Conversion</h5>
+                </div>
+                <div class="card-body">
+                    <p>Hexadecimal to ASCII conversion is the process of translating hexadecimal values to their corresponding ASCII characters and vice versa. This is essential for:</p>
+                    <ul>
+                        <li>Binary data analysis</li>
+                        <li>Reverse engineering</li>
+                        <li>Malware analysis</li>
+                        <li>Network packet analysis</li>
+                        <li>Android pentesting</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-mobile-alt me-2"></i>Android Security</h6>
+                        <p class="small text-muted">Nandha Kumar M's Android pentesting research shows that hex-ASCII conversion is crucial for analyzing APK files and extracting sensitive information from binary data.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>GraphQL Security</h6>
+                        <p class="small text-muted">In GraphQL introspection testing, hex values may appear in encoded payloads and headers that require conversion for analysis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../header-footer.js"></script>
+    <script src="hex-ascii-converter.js"></script>
+</body>
+</html>
