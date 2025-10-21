@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data URI Generator - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional Data URI generator by Nandha Kumar M. Convert files to Data URI format for web security applications.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-link me-2"></i>Data URI Generator
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Convert files and text to Data URI format. Data URIs embed data directly in web pages, useful for reducing HTTP requests and security testing.
+            </p>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">Upload File</label>
+                        <input type="file" id="fileUpload" class="form-control">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Or Enter Text</label>
+                        <textarea id="textInput" class="form-control" rows="4" placeholder="Enter text to convert to Data URI..."></textarea>
+                    </div>
+                    
+                    <div class="d-flex gap-2 mb-3">
+                        <button id="generateDataURI" class="btn btn-primary">
+                            <i class="fas fa-link me-2"></i>Generate Data URI
+                        </button>
+                        <button id="clearAll" class="btn btn-secondary">
+                            <i class="fas fa-eraser me-2"></i>Clear All
+                        </button>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Generated Data URI</label>
+                        <textarea id="dataURIOutput" class="form-control" rows="6" readonly></textarea>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button id="copyDataURI" class="btn btn-outline-primary">
+                            <i class="fas fa-copy me-2"></i>Copy Data URI
+                        </button>
+                        <button id="previewURI" class="btn btn-outline-info">
+                            <i class="fas fa-eye me-2"></i>Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-info-circle me-2"></i>About Data URI</h5>
+                </div>
+                <div class="card-body">
+                    <p>A Data URI is a Uniform Resource Identifier (URI) scheme that provides a way to include data in-line in web pages as if they were external resources. The format is: [mediatype][;base64],data</p>
+                    <h6>Common Use Cases:</h6>
+                    <ul>
+                        <li>Embedding small images in CSS/HTML</li>
+                        <li>Reducing HTTP requests</li>
+                        <li>Inline resource loading</li>
+                        <li>Security testing of embedded content</li>
+                        <li>Penetration testing scenarios</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>GraphQL Security</h6>
+                        <p class="small text-muted">In GraphQL introspection testing, Data URIs might be used in queries or mutations that accept file uploads, requiring careful validation to prevent security issues.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-network-wired me-2"></i>Web Security</h6>
+                        <p class="small text-muted">Nandha Kumar M's research shows that Data URIs can be used for XSS attacks and should be properly validated in web applications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../header-footer.js"></script>
+    <script src="data-uri-generator.js"></script>
+</body>
+</html>

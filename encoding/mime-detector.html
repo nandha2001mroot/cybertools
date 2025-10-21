@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIME Type Detector - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional MIME type detector by Nandha Kumar M. Identify file types from signatures for security analysis.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-file me-2"></i>MIME Type Detector
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Detect MIME types and file signatures from uploaded files. Essential for file upload security and malware analysis.
+            </p>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">Upload File</label>
+                        <input type="file" id="fileUpload" class="form-control">
+                    </div>
+                    
+                    <div class="d-flex gap-2 mb-3">
+                        <button id="analyzeFile" class="btn btn-primary">
+                            <i class="fas fa-search me-2"></i>Analyze File
+                        </button>
+                        <button id="clearAll" class="btn btn-secondary">
+                            <i class="fas fa-eraser me-2"></i>Clear All
+                        </button>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>File Information</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <strong>Filename:</strong> <span id="fileName">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>File Size:</strong> <span id="fileSize">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>File Type:</strong> <span id="fileType">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Detection Results</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <strong>MIME Type:</strong> <span id="mimeType">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Detected Type:</strong> <span id="detectedType">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Security Level:</strong> <span id="securityLevel">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <h6>File Signature (Hex)</h6>
+                        <pre id="fileSignature" class="text-start bg-dark text-light p-3 rounded"></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-info-circle me-2"></i>About MIME Type Detection</h5>
+                </div>
+                <div class="card-body">
+                    <p>MIME type detection involves analyzing the file signature (magic bytes) at the beginning of a file to determine its actual type, regardless of the file extension. This is crucial for:</p>
+                    <ul>
+                        <li>File upload security</li>
+                        <li>Malware detection</li>
+                        <li>Digital forensics</li>
+                        <li>Content filtering</li>
+                        <li>Penetration testing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-mobile-alt me-2"></i>Android Security</h6>
+                        <p class="small text-muted">In Android pentesting, MIME type detection is crucial for analyzing APK files and identifying potential security risks in file handling mechanisms.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-search me-2"></i>Forensics Analysis</h6>
+                        <p class="small text-muted">Nandha Kumar M's research shows that file signature analysis is essential for digital forensics and incident response investigations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../header-footer.js"></script>
+    <script src="mime-detector.js"></script>
+</body>
+</html>

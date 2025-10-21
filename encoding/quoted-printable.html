@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quoted-Printable Decoder - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional Quoted-Printable decoder by Nandha Kumar M. Decode MIME encoded text for email and security analysis.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-envelope me-2"></i>Quoted-Printable Decoder
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Decode Quoted-Printable encoded text. Quoted-Printable is a binary-to-text encoding scheme used primarily in email messages.
+            </p>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">Quoted-Printable Input</label>
+                        <textarea id="qpInput" class="form-control" rows="8" placeholder="Enter Quoted-Printable encoded text..."></textarea>
+                    </div>
+                    
+                    <div class="d-flex gap-2 mb-3">
+                        <button id="decodeQP" class="btn btn-primary">
+                            <i class="fas fa-unlock me-2"></i>Decode Quoted-Printable
+                        </button>
+                        <button id="clearAll" class="btn btn-secondary">
+                            <i class="fas fa-eraser me-2"></i>Clear All
+                        </button>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Decoded Output</label>
+                        <textarea id="decodedOutput" class="form-control" rows="8" readonly></textarea>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button id="copyDecoded" class="btn btn-outline-primary">
+                            <i class="fas fa-copy me-2"></i>Copy Decoded
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-info-circle me-2"></i>About Quoted-Printable</h5>
+                </div>
+                <div class="card-body">
+                    <p>Quoted-Printable is a binary-to-text encoding scheme that represents 8-bit data using printable ASCII characters. It's defined in RFC 2045 and is commonly used in email messages.</p>
+                    <h6>Encoding Rules:</h6>
+                    <ul>
+                        <li>Non-printable characters are encoded as = followed by two hexadecimal digits</li>
+                        <li>Lines longer than 76 characters are soft-wrapped with = at the end</li>
+                        <li>Spaces and tabs at the end of lines are encoded</li>
+                        <li>Used primarily in email headers and message bodies</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>Email Security</h6>
+                        <p class="small text-muted">In email security analysis, Quoted-Printable decoding is essential for examining email headers and content that may contain malicious payloads or phishing attempts.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-network-wired me-2"></i>Forensics Analysis</h6>
+                        <p class="small text-muted">Nandha Kumar M's research shows that Quoted-Printable analysis is important for email forensics and incident response investigations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../header-footer.js"></script>
+    <script src="quoted-printable.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base32 Encoder/Decoder - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional Base32 encoder/decoder tool by Nandha Kumar M. Secure encoding for cybersecurity professionals.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-code me-2"></i>Base32 Encoder/Decoder
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Encode and decode text using Base32 encoding. Base32 is a binary-to-text encoding scheme that represents binary data in an ASCII string format.
+            </p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-dark">
+                            <h5><i class="fas fa-lock me-2"></i>Encoder</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">Text to Encode</label>
+                                <textarea id="encodeInput" class="form-control" rows="4" placeholder="Enter text to encode..."></textarea>
+                            </div>
+                            <button id="encodeBtn" class="btn btn-primary">
+                                <i class="fas fa-lock me-2"></i>Encode to Base32
+                            </button>
+                            <button id="clearEncode" class="btn btn-secondary ms-2">
+                                <i class="fas fa-eraser me-2"></i>Clear
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-dark">
+                            <h5><i class="fas fa-unlock me-2"></i>Decoder</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">Base32 to Decode</label>
+                                <textarea id="decodeInput" class="form-control" rows="4" placeholder="Enter Base32 to decode..."></textarea>
+                            </div>
+                            <button id="decodeBtn" class="btn btn-success">
+                                <i class="fas fa-unlock me-2"></i>Decode from Base32
+                            </button>
+                            <button id="clearDecode" class="btn btn-secondary ms-2">
+                                <i class="fas fa-eraser me-2"></i>Clear
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-dark">
+                            <h5><i class="fas fa-arrow-down me-2"></i>Encoded Result</h5>
+                        </div>
+                        <div class="card-body">
+                            <textarea id="encodedOutput" class="form-control" rows="4" readonly></textarea>
+                            <button id="copyEncoded" class="btn btn-outline-primary mt-2">
+                                <i class="fas fa-copy me-2"></i>Copy Encoded
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-dark">
+                            <h5><i class="fas fa-arrow-down me-2"></i>Decoded Result</h5>
+                        </div>
+                        <div class="card-body">
+                            <textarea id="decodedOutput" class="form-control" rows="4" readonly></textarea>
+                            <button id="copyDecoded" class="btn btn-outline-success mt-2">
+                                <i class="fas fa-copy me-2"></i>Copy Decoded
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-info-circle me-2"></i>About Base32</h5>
+                </div>
+                <div class="card-body">
+                    <p>Base32 is a binary-to-text encoding scheme that represents binary data in an ASCII string format by translating it into a radix-32 representation. It uses a 32-character alphabet (A-Z and 2-7).</p>
+                    <h6>Common Use Cases:</h6>
+                    <ul>
+                        <li>OTP (One-Time Password) generation</li>
+                        <li>QR code data encoding</li>
+                        <li>URL-safe encoding</li>
+                        <li>File naming systems</li>
+                        <li>Obfuscation in security contexts</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>GraphQL Security</h6>
+                        <p class="small text-muted">In GraphQL introspection testing, Base32 encoded payloads may be used to obfuscate malicious queries, similar to Base64 but with a more limited character set.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-mobile-alt me-2"></i>Android Security</h6>
+                        <p class="small text-muted">Nandha Kumar M's Android pentesting research shows that Base32 encoding is sometimes used in mobile apps for storing sensitive data or API keys.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../header-footer.js"></script>
+    <script src="base32-encoder.js"></script>
+</body>
+</html>

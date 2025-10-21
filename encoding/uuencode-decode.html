@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UUencode/Decode Simulator - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional UUencode/decode simulator by Nandha Kumar M. Historical encoding for binary data transmission.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-file-code me-2"></i>UUencode/Decode Simulator
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Simulate UUencoding and decoding of binary data. UUencoding is an older binary-to-text encoding scheme used primarily in email and Usenet.
+            </p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-dark">
+                            <h5><i class="fas fa-lock me-2"></i>UUencode</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">Text to UUencode</label>
+                                <textarea id="encodeInput" class="form-control" rows="6" placeholder="Enter text to UUencode..."></textarea>
+                            </div>
+                            <button id="encodeBtn" class="btn btn-primary">
+                                <i class="fas fa-lock me-2"></i>UUencode Text
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-dark">
+                            <h5><i class="fas fa-unlock me-2"></i>UUdecode</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">UUencoded Text</label>
+                                <textarea id="decodeInput" class="form-control" rows="6" placeholder="Enter UUencoded text..."></textarea>
+                            </div>
+                            <button id="decodeBtn" class="btn btn-success">
+                                <i class="fas fa-unlock me-2"></i>UUdecode Text
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-dark">
+                            <h5><i class="fas fa-arrow-down me-2"></i>UUencoded Output</h5>
+                        </div>
+                        <div class="card-body">
+                            <textarea id="encodedOutput" class="form-control" rows="6" readonly></textarea>
+                            <button id="copyEncoded" class="btn btn-outline-primary mt-2">
+                                <i class="fas fa-copy me-2"></i>Copy UUencoded
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-dark">
+                            <h5><i class="fas fa-arrow-down me-2"></i>UUdecoded Output</h5>
+                        </div>
+                        <div class="card-body">
+                            <textarea id="decodedOutput" class="form-control" rows="6" readonly></textarea>
+                            <button id="copyDecoded" class="btn btn-outline-success mt-2">
+                                <i class="fas fa-copy me-2"></i>Copy UUdecoded
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-info-circle me-2"></i>About UUencoding</h5>
+                </div>
+                <div class="card-body">
+                    <p>UUencoding (Unix-to-Unix encoding) is a binary-to-text encoding scheme that was used to send binary files over email and Usenet. It converts 8-bit binary data into 6-bit ASCII characters.</p>
+                    <h6>Historical Context:</h6>
+                    <ul>
+                        <li>Widely used in the 1980s and 1990s</li>
+                        <li>Used for sending binary files over email</li>
+                        <li>Part of Usenet newsgroup culture</li>
+                        <li>Now largely replaced by MIME</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-search me-2"></i>Forensics Analysis</h6>
+                        <p class="small text-muted">In digital forensics, understanding UUencoding helps in analyzing old email systems and historical data that may contain encoded binary content.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>Security Education</h6>
+                        <p class="small text-muted">Nandha Kumar M's research emphasizes the importance of understanding historical encoding methods for comprehensive security analysis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../header-footer.js"></script>
+    <script src="uuencode-decode.js"></script>
+</body>
+</html>
