@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap Parser - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional sitemap parser by Nandha Kumar M. Parse XML sitemaps for security analysis.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-sitemap me-2"></i>Sitemap Parser
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Parse XML sitemaps to identify all URLs and analyze for security vulnerabilities. Essential for web application security testing.
+            </p>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">Sitemap URL or Content</label>
+                        <textarea id="sitemapInput" class="form-control" rows="6" placeholder="Enter sitemap URL or paste sitemap XML content..."></textarea>
+                    </div>
+                    
+                    <div class="d-flex gap-2 mb-3">
+                        <button id="parseSitemap" class="btn btn-primary">
+                            <i class="fas fa-search me-2"></i>Parse Sitemap
+                        </button>
+                        <button id="fetchSitemap" class="btn btn-secondary">
+                            <i class="fas fa-download me-2"></i>Fetch from URL
+                        </button>
+                        <button id="clearAll" class="btn btn-secondary">
+                            <i class="fas fa-eraser me-2"></i>Clear All
+                        </button>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Parse Results</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <strong>Total URLs:</strong> <span id="totalURLs">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Security Issues:</strong> <span id="securityIssues">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>File Types:</strong> <span id="fileTypes">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Depth Analysis:</strong> <span id="depthAnalysis">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Security Analysis</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <strong>Sensitive URLs:</strong> <span id="sensitiveURLs">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Hidden Directories:</strong> <span id="hiddenDirs">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Admin Areas:</strong> <span id="adminAreas">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Recommendations:</strong> <span id="recommendations">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <h6>Found URLs</h6>
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>URL</th>
+                                        <th>Security Risk</th>
+                                        <th>File Type</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="urlResults">
+                                    <!-- Results will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-info-circle me-2"></i>About Sitemaps</h5>
+                </div>
+                <div class="card-body">
+                    <p>An XML sitemap lists a website's important pages to help search engines understand the site structure. It can also reveal hidden or sensitive pages that should not be indexed.</p>
+                    <h6>Common Security Issues:</h6>
+                    <ul>
+                        <li>Exposed admin panels</li>
+                        <li>Hidden directories</li>
+                        <li>Sensitive file locations</li>
+                        <li>Development files</li>
+                        <li>Backup files</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>Penetration Testing</h6>
+                        <p class="small text-muted">In penetration testing, sitemap parsing can reveal hidden pages and directories that might contain vulnerabilities. Nandha Kumar M's research shows that sitemap analysis is crucial for comprehensive security assessments.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-search me-2"></i>Deep Domain Discovery</h6>
+                        <p class="small text-muted">Sitemaps can be combined with other techniques for deep domain discovery, as mentioned in Nandha's research on finding deep domains without tools.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../header-footer.js"></script>
+    <script src="sitemap-parser.js"></script>
+</body>
+</html>

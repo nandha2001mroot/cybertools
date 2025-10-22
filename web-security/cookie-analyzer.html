@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Analyzer - CyberTools | Nandha Kumar M</title>
+    <meta name="description" content="Professional cookie analyzer by Nandha Kumar M. Analyze HTTP cookies for security vulnerabilities.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container mt-4">
+        <div class="tool-page">
+            <h1 class="tool-title">
+                <i class="fas fa-cookie me-2"></i>Cookie Analyzer
+            </h1>
+            <p class="tool-description">
+                <i class="fas fa-shield-alt me-1"></i>
+                Analyze HTTP cookies to identify security vulnerabilities and misconfigurations. Essential for web application security testing.
+            </p>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">Cookie String</label>
+                        <textarea id="cookieInput" class="form-control" rows="4" placeholder="Paste cookie string here..."></textarea>
+                    </div>
+                    
+                    <div class="d-flex gap-2 mb-3">
+                        <button id="analyzeCookies" class="btn btn-primary">
+                            <i class="fas fa-search me-2"></i>Analyze Cookies
+                        </button>
+                        <button id="clearAll" class="btn btn-secondary">
+                            <i class="fas fa-eraser me-2"></i>Clear All
+                        </button>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Cookie Properties</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <strong>Name:</strong> <span id="cookieName">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Value:</strong> <span id="cookieValue">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Domain:</strong> <span id="cookieDomain">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Path:</strong> <span id="cookiePath">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Expires:</strong> <span id="cookieExpires">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Security Analysis</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <strong>HttpOnly:</strong> <span id="httpOnlyStatus">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Secure:</strong> <span id="secureStatus">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>SameSite:</strong> <span id="sameSiteStatus">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Security Level:</strong> <span id="securityLevel">-</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <strong>Vulnerabilities:</strong> <span id="vulnerabilities">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <h6>Full Cookie Analysis</h6>
+                        <pre id="cookieAnalysis" class="text-start bg-dark text-light p-3 rounded"></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-info-circle me-2"></i>About HTTP Cookies</h5>
+                </div>
+                <div class="card-body">
+                    <p>HTTP cookies are small pieces of data sent from a website and stored on the user's computer by the web browser. They are used to remember stateful information.</p>
+                    <h6>Security Attributes:</h6>
+                    <ul>
+                        <li><strong>HttpOnly:</strong> Prevents XSS attacks</li>
+                        <li><strong>Secure:</strong> Ensures HTTPS transmission</li>
+                        <li><strong>SameSite:</strong> Prevents CSRF attacks</li>
+                        <li><strong>Domain:</strong> Specifies cookie scope</li>
+                        <li><strong>Path:</strong> Limits cookie scope</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-dark">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Expert Insight</h5>
+                </div>
+                <div class="card-body">
+                    <div class="insight-item">
+                        <h6><i class="fas fa-bug me-2"></i>GraphQL Security</h6>
+                        <p class="small text-muted">In GraphQL introspection testing, analyzing cookies can reveal authentication tokens or session information that might be used to access GraphQL endpoints.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h6><i class="fas fa-network-wired me-2"></i>Web Security</h6>
+                        <p class="small text-muted">Nandha Kumar M's research shows that cookie analysis is crucial for identifying security vulnerabilities in web applications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../header-footer.js"></script>
+    <script src="cookie-analyzer.js"></script>
+</body>
+</html>
